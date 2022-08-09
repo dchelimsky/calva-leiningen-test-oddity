@@ -8,6 +8,8 @@ I observed this behavior with the following versions
 - Calva v2.0.291
 - nrepl/nrepl 0.9.0
 - cider/cider-nrepl 0.28.5
+- leiningen 2.9.8
+- Java 11.0.11
 
 To see this in action:
 
