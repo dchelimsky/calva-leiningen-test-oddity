@@ -3,15 +3,15 @@
 
 (defrecord Thing [x])
 
-(prn (System/identityHashCode Thing))
+(prn {:thing-class-id (System/identityHashCode Thing)})
 
-(defn print-stuff [klazz]  
-  (prn {:class-id (System/identityHashCode klazz)})
+(defn print-thing-class-id [klazz]  
+  (prn {:thing-class-id-from-test (System/identityHashCode klazz)})
   true)
 
-(deftest do-stuff
-  (is (print-stuff Thing))
-  (is (print-stuff Thing)))
+(deftest test-print-thing-class-id
+  (is (print-thing-class-id Thing))
+  (is (print-thing-class-id Thing)))
 
 ;; command generated when starting with tools.deps
 ;; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"0.9.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}} '-M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
