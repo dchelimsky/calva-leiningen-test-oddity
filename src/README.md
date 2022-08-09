@@ -62,4 +62,17 @@ If you run the tests again, you'll continue to see a new id in the first and thi
 
 If you disconnect from the REPL and start a new REPL using deps.edn, you'll see new IDs for each test run, but all 3 ids will align.
 
+Other observations:
+
+```
+;; command generated when starting with tools.deps
+;; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"0.9.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}} '-M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+
+;; command generated when starting with leiningen
+;; lein update-in :dependencies conj '[nrepl,"0.9.0"] '-- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"] '-- update-in '[:repl-options,:nrepl-middleware] 'conj '["cider.nrepl/cider-middleware"] '-- repl :headless
+
+;; cider-nrepl is a dep in tools.deps, but a plugin in leiningen
+```
+
 Running this same exercise in other tools (emacs, IntelliJ+Cursive) with deps.edn (tools.deps) or project.clj (leiningen) consistently produces output with all 3 ids aligned.
+
