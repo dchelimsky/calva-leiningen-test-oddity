@@ -10,6 +10,7 @@ I observed this behavior with the following versions
 - cider/cider-nrepl 0.28.5
 - leiningen 2.9.8
 - Java 11.0.11
+- Clojure 1.11.1
 
 To see this in action:
 
